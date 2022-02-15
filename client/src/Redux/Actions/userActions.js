@@ -26,7 +26,7 @@ export const userSignUpAction =
       };
 
       const { data } = await axios.post(
-        `http://localhost:5000/api/v1/users/register`,
+        `/api/v1/users/register`,
         { username, email, password },
         config
       );
@@ -58,7 +58,7 @@ export const userLoginActions = (username, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `http://localhost:5000/api/v1/users/login`,
+      `/api/v1/users/login`,
       { username, password },
       config
     );
@@ -94,10 +94,7 @@ export const userDetailsActions = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(
-      `http://localhost:5000/api/v1/users/${id}`,
-      config
-    );
+    const { data } = await axios.get(`/api/v1/users/${id}`, config);
 
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
@@ -126,7 +123,7 @@ export const userUpdateActions =
       };
 
       const { data } = await axios.patch(
-        `http://localhost:5000/api/v1/users/${id}`,
+        `/api/v1/users/${id}`,
         { username, email, password },
         config
       );
