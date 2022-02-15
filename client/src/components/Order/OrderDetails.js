@@ -48,7 +48,7 @@ const OrderDetails = () => {
   const makeRequest = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/payment",
+        "/api/v1/payment",
         {
           tokenId: Stripetoken.id,
           amount: orderCalculation?.totalPrice,
