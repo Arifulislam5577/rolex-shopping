@@ -30,7 +30,7 @@ const Arrival = () => {
           ) : loading ? (
             <Loader />
           ) : (
-            products.map((product) => {
+            products?.map((product) => {
               return (
                 <div className="col" key={product._id}>
                   <div className="card h-100 p-5 rounded-0 border border-0">
