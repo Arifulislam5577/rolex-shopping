@@ -1,24 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   addToCartAction,
   allProductAction,
 } from "../../Redux/Actions/productActions";
 import Loader from "../Loader/Loader";
-
+import Zoom from "react-reveal/Zoom";
 const Shop = () => {
   const dispatch = useDispatch();
-  const {
-    error,
-    loading,
-    products,
-    totalProducts,
-    result,
-    resultPerPage,
-    colors,
-  } = useSelector((state) => state.allProduct);
+  const { error, loading, products, totalProducts, result, resultPerPage } =
+    useSelector((state) => state.allProduct);
   const { cartItems } = useSelector((state) => state.addToCartProducts);
   const { color } = useParams();
   const [keyword, setKeyword] = useState("");
@@ -26,6 +18,8 @@ const Shop = () => {
   const [pageNum, setPageNum] = useState(1);
   const [price, setPrice] = useState(2000);
   const pages = Math.ceil(totalProducts / resultPerPage);
+
+  const colors = ["black", "blue", "gold", "white"];
 
   useEffect(() => {
     dispatch(allProductAction(keyword, pageNum, price, color));
@@ -112,7 +106,7 @@ const Shop = () => {
             </div>
           </div>
           <div className="col-12 col-sm-12 col-md-8 col-lg-9 product-area">
-            <motion.div
+            <div
               layout
               className="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-5"
             >
@@ -129,11 +123,13 @@ const Shop = () => {
                           {product.base}
                         </span>
                         <Link to={`/product/${product._id}`}>
-                          <img
-                            src={product.url}
-                            className="card-img-top"
-                            alt={product.title}
-                          />
+                          <Zoom>
+                            <img
+                              src={product.url}
+                              className="card-img-top"
+                              alt={product.title}
+                            />
+                          </Zoom>
                         </Link>
                         <div className="card-body text-center">
                           <h3 className="text-uppercase">
@@ -193,7 +189,7 @@ const Shop = () => {
                   </h1>
                 </div>
               )}
-            </motion.div>
+            </div>
 
             {!loading && result !== 0 && (
               <div className=" py-5">
