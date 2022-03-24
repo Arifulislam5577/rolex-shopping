@@ -13,13 +13,13 @@ There is also an admin simple dashboard, where the admin can deliver the order a
 
 
 ### Server-Side
-make sure you are in the root directory.
+make sure you are in the ```root``` directory.
 ```bash
 npm install or npm i
 ```
 
 ### Client-Side
-make sure you are in the rolex-shopping/client directory.
+make sure you are in the ```rolex-shopping/client``` directory.
 ```bash
 npm install or npm i
 ```
@@ -53,4 +53,4 @@ npm start
 
 Please make sure to update tests as appropriate.
 
-### Thank you
+```Thank you```
