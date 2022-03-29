@@ -60,6 +60,33 @@ const ProductDetials = () => {
                 <div className="quantity d-flex align-items-center justify-content-between">
                   <button
                     className="btn-secondary btn-sm text-light border border-0 p-2"
+                    onClick={() => setQty(qty - 1)}
+                    disabled={qty === 1}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="#ffffff"
+                      viewBox="0 0 256 256"
+                    >
+                      <rect width="256" height="256" fill="none"></rect>
+                      <line
+                        x1="40"
+                        y1="128"
+                        x2="216"
+                        y2="128"
+                        fill="none"
+                        stroke="#ffffff"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="8"
+                      ></line>
+                    </svg>
+                  </button>
+                  <span className="m-3 fw-bold fs-5">{qty}</span>
+                  <button
+                    className="btn-secondary btn-sm text-light border border-0 p-2"
                     onClick={() => setQty(qty + 1)}
                     disabled={qty === product?.stock}
                   >
@@ -87,33 +114,6 @@ const ProductDetials = () => {
                         y1="40"
                         x2="128"
                         y2="216"
-                        fill="none"
-                        stroke="#ffffff"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="8"
-                      ></line>
-                    </svg>
-                  </button>
-                  <span className="m-3 fw-bold fs-5">{qty}</span>
-                  <button
-                    className="btn-secondary btn-sm text-light border border-0 p-2"
-                    onClick={() => setQty(qty - 1)}
-                    disabled={qty === 1}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="#ffffff"
-                      viewBox="0 0 256 256"
-                    >
-                      <rect width="256" height="256" fill="none"></rect>
-                      <line
-                        x1="40"
-                        y1="128"
-                        x2="216"
-                        y2="128"
                         fill="none"
                         stroke="#ffffff"
                         strokeLinecap="round"
