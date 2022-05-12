@@ -2,7 +2,7 @@
 
 Rolex is an e-commerce website built by M.E.R.N stack. There are different kinds of product categories. Users can purchase any product. If the user wants to purchase any product, she/he needs to add the product to the shopping cart. But if the user has no previous account then she/he needs to create a new account. After creating an account or logging in, she/he needs to provide his/her shipping address. After providing the shipping address he/she need to pay with a stripe payment gateway. user can see the order which he was purchased before in his profile.
 
-<img src="https://res.cloudinary.com/dwrpcntox/image/upload/v1648128437/Shopping-cart/Untitled_design_k2szlu.png" width="100%"/>
+<img src="https://res.cloudinary.com/arif5577/image/upload/v1648128437/Shopping-cart/Untitled_design_k2szlu.png" width="100%"/>
 
 
 There is also an admin simple dashboard, where the admin can deliver the order and can see the total order in the admin panel.
