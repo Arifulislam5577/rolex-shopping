@@ -44,7 +44,7 @@ const Hero = () => {
           <Fade right>
             <div className="hero-image">
               <img
-                src="https://res.cloudinary.com/dwrpcntox/image/upload/v1643377241/Shopping-cart/home_jtitnq.png"
+                src="https://res.cloudinary.com/arif5577/image/upload/v1643377241/Shopping-cart/home_jtitnq.png"
                 alt="watch"
               />
             </div>

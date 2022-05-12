@@ -35,7 +35,7 @@ export const products = [
     countReview: 100,
     color: "black",
 
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377269/Shopping-cart/nqqbubuehplzkqmhg517.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377269/Shopping-cart/nqqbubuehplzkqmhg517.png",
   },
 
   {
@@ -73,7 +73,7 @@ export const products = [
     stock: 23,
     countReview: 120,
     color: "black",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377240/Shopping-cart/new4_dxq3xo.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377240/Shopping-cart/new4_dxq3xo.png",
   },
 
   {
@@ -111,7 +111,7 @@ export const products = [
     stock: 20,
     countReview: 65,
     color: "gold",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377240/Shopping-cart/new3_kulozt.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377240/Shopping-cart/new3_kulozt.png",
   },
   {
     title: "spirit rose",
@@ -147,7 +147,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "white",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377237/Shopping-cart/featured1_ndt33d.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377239/Shopping-cart/new1_guvzhj.png",
     base: "hot",
   },
   {
@@ -184,7 +184,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "black",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377237/Shopping-cart/BlackShock_pwxa12.jpg",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377237/Shopping-cart/BlackShock_pwxa12.jpg",
     base: "hot",
   },
   {
@@ -221,7 +221,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "black",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377237/Shopping-cart/featured3_pwphr8.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377237/Shopping-cart/featured3_pwphr8.png",
     base: "hot",
   },
   {
@@ -258,7 +258,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "blue",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377237/Shopping-cart/fossil-original_eugpjo.jpg",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377237/Shopping-cart/fossil-original_eugpjo.jpg",
     base: "hot",
   },
   {
@@ -295,7 +295,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "gold",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377237/Shopping-cart/featured2_drmpz7.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377237/Shopping-cart/featured2_drmpz7.png",
     base: "hot",
   },
   {
@@ -332,7 +332,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "white",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377236/Shopping-cart/product5_j8blcy.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377236/Shopping-cart/product5_j8blcy.png",
     base: "hot",
   },
   {
@@ -444,7 +444,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "black",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377236/Shopping-cart/product3_xrwdug.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377237/Shopping-cart/featured3_pwphr8.png",
   },
   {
     base: "new",
@@ -481,7 +481,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "black",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377236/Shopping-cart/alogo-original_ae7kgo.jpg",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377236/Shopping-cart/alogo-original_ae7kgo.jpg",
   },
   {
     base: "new",
@@ -518,7 +518,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "gold",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377239/Shopping-cart/product1_jlcq6x.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377239/Shopping-cart/product1_jlcq6x.png",
   },
   {
     base: "new",
@@ -555,6 +555,6 @@ export const products = [
     stock: 5,
     countReview: 122,
     color: "black",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377239/Shopping-cart/new1_guvzhj.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377239/Shopping-cart/new1_guvzhj.png",
   },
 ];
