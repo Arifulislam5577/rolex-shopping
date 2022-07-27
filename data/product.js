@@ -369,7 +369,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "white",
-    url: "https://res.cloudinary.com/dwrpcntox/image/upload/v1643377236/Shopping-cart/product2_x9duza.png",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377269/Shopping-cart/nqqbubuehplzkqmhg517.png",
     base: "hot",
   },
   {
