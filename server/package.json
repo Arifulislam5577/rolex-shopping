@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js",
+    "start": "node index.js",
+    "server": "nodemon index.js",
     "importPack": "node utils/seeder.js"
   },
   "keywords": [],
@@ -22,6 +22,5 @@
     "mongoose": "^6.1.8",
     "stripe": "^8.202.0",
     "uuid": "^8.3.2"
-  },
-  "engines": {}
+  }
 }
