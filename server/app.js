@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import path from "path";
 dotenv.config();
 
 import cors from "cors";
@@ -25,21 +24,6 @@ app.use("/api/v1/order", orderRouter);
 mongoose.connect(process.env.MONGODB_URI, () => {
   console.log("Connect to database");
 });
-
-// --------------------------deployment------------------------------
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve("client", "build", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running..");
-  });
-}
-// --------------------------deployment------------------------------
 
 app.use(notFound);
 app.use(errorHandler);
