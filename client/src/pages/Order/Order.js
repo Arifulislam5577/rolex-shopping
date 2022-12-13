@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 import { orderCreate } from "../../Redux/Actions/orderActions";
-import Loader from "../Loader/Loader";
 
 const Order = () => {
   const navigate = useNavigate();

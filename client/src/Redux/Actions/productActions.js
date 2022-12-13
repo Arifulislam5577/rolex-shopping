@@ -24,7 +24,9 @@ export const featuredAction = () => async (dispatch) => {
   try {
     dispatch({ type: FEATURED_PRODUCT_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/products?base=sale`);
+    const { data } = await axios.get(
+      `https://rolex-server.vercel.app/api/v1/products?base=sale`
+    );
 
     dispatch({
       type: FEATURED_PRODUCT_SUCCESS,
@@ -52,10 +54,10 @@ export const allProductAction =
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
 
-      let api = `/api/v1/products?keyword=${keyword}&page=${pageNum}&price[lte]=${price}`;
+      let api = `https://rolex-server.vercel.app/api/v1/products?keyword=${keyword}&page=${pageNum}&price[lte]=${price}`;
 
       if (color) {
-        api = `/api/v1/products?keyword=${keyword}&page=${pageNum}&price[lte]=${price}&color=${color}`;
+        api = `https://rolex-server.vercel.app/api/v1/products?keyword=${keyword}&page=${pageNum}&price[lte]=${price}&color=${color}`;
       }
 
       const { data } = await axios.get(api);
@@ -85,7 +87,9 @@ export const arrivalAction = () => async (dispatch) => {
   try {
     dispatch({ type: NEW_ARRIVAL_PRODUCT_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/products?base=new`);
+    const { data } = await axios.get(
+      `https://rolex-server.vercel.app/api/v1/products?base=new`
+    );
 
     dispatch({
       type: NEW_ARRIVAL_PRODUCT_SUCCESS,
@@ -108,7 +112,9 @@ export const hotProductAction = () => async (dispatch) => {
   try {
     dispatch({ type: HOT_PRODUCT_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/products?base=hot`);
+    const { data } = await axios.get(
+      `https://rolex-server.vercel.app/api/v1/products?base=hot`
+    );
 
     dispatch({
       type: HOT_PRODUCT_SUCCESS,
@@ -131,7 +137,9 @@ export const singleProductAction = (id) => async (dispatch) => {
   try {
     dispatch({ type: SINGLE_PRODUCT_REQUEST });
 
-    const { data } = await axios.get(`/api/v1/products/${id}`);
+    const { data } = await axios.get(
+      `https://rolex-server.vercel.app/api/v1/products/${id}`
+    );
 
     dispatch({
       type: SINGLE_PRODUCT_SUCCESS,
@@ -151,7 +159,9 @@ export const singleProductAction = (id) => async (dispatch) => {
 export const addToCartAction =
   (id, qty = 1) =>
   async (dispatch, getState) => {
-    const { data } = await axios.get(`/api/v1/products/${id}`);
+    const { data } = await axios.get(
+      `https://rolex-server.vercel.app/api/v1/products/${id}`
+    );
 
     dispatch({
       type: ADD_TO_CART_SUCCESS,

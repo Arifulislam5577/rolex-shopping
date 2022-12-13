@@ -1,81 +1,94 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Dashboard from "./components/Dashboard/Dashboard";
-import Footer from "./components/Footer/Footer";
-import Home from "./components/Home/Home";
-import LogIn from "./components/Login/Login";
-import Navbar from "./components/Navbar/Navbar";
-import NotFound from "./components/NotFound/NotFound";
-import Order from "./components/Order/Order";
-import OrderDetails from "./components/Order/OrderDetails";
+import Layout from "./components/Layout/Layout";
 import AdminRoute from "./components/PrivateRoutes/AdminRoute";
 import PrivateRoute from "./components/PrivateRoutes/PrivateRoute";
-import ProductDetials from "./components/productDetails/ProductDetials";
-import Profile from "./components/Profile/Profile";
-import Shipping from "./components/Shipping/Shipping";
-import Shop from "./components/Shop/Shop";
-import SingIn from "./components/SignIn/SingIn";
+import Shipping from "./pages/Shipping/Shipping";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Home from "./pages/Home/Home";
+import Profile from "./pages/Profile/Profile";
+import LogIn from "./pages/Login/Login";
+import Order from "./pages/Order/Order";
+import OrderDetails from "./pages/Order/OrderDetails";
+import ProductDetials from "./pages/ProductDetails/ProductDetials";
+import Shop from "./pages/Shop/Shop";
+import SingIn from "./pages/SignIn/SignIn";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SingIn />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/shop" element={<Shop />}>
-          <Route path="colors/:color" element={<Shop />}></Route>
-        </Route>
-        <Route path="/product/:id" element={<ProductDetials />} />
-
-        <Route
-          path="/profile"
-          element={
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/signin",
+          element: <SingIn />,
+        },
+        {
+          path: "/login",
+          element: <LogIn />,
+        },
+        {
+          path: "/product/:id",
+          element: <ProductDetials />,
+        },
+        {
+          path: "/shop",
+          element: <Shop />,
+        },
+        {
+          path: "/profile",
+          element: (
             <PrivateRoute>
               <Profile />
             </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/shipping"
-          element={
+          ),
+        },
+        {
+          path: "/shipping",
+          element: (
             <PrivateRoute>
               <Shipping />
             </PrivateRoute>
-          }
-        />
-        <Route
-          path="/order"
-          element={
+          ),
+        },
+        {
+          path: "/order",
+          element: (
             <PrivateRoute>
               <Order />
             </PrivateRoute>
-          }
-        />
-        <Route
-          path="/order/:id"
-          element={
+          ),
+        },
+        {
+          path: "/order/:id",
+          element: (
             <PrivateRoute>
               <OrderDetails />
             </PrivateRoute>
-          }
-        />
-
-        <Route
-          path="/dashboard"
-          element={
+          ),
+        },
+        {
+          path: "/dashboard",
+          element: (
             <AdminRoute>
               <Dashboard />
             </AdminRoute>
-          }
-        />
-      </Routes>
-      <Footer />
-    </Router>
-  );
+          ),
+        },
+        {
+          path: "*",
+          element: <NotFound />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;

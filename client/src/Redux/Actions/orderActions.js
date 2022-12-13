@@ -32,7 +32,11 @@ export const orderCreate = (newOrder) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(`/api/v1/order`, newOrder, config);
+    const { data } = await axios.post(
+      `https://rolex-server.vercel.app/api/v1/order`,
+      newOrder,
+      config
+    );
 
     dispatch({ type: NEW_ORDER_SUCCESS, payload: data });
     dispatch({ type: ORDER_COMPLETE_AND_RESET_CART });
@@ -62,7 +66,7 @@ export const getOrder = (id) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `/api/v1/order/${id}`,
+      `https://rolex-server.vercel.app/api/v1/order/${id}`,
 
       config
     );
@@ -94,7 +98,7 @@ export const OrderUpdate =
       };
 
       const { data } = await axios.patch(
-        `/api/v1/order/${id}`,
+        `https://rolex-server.vercel.app/api/v1/order/${id}`,
         paymentResult,
         config
       );
@@ -125,7 +129,10 @@ export const getUserOrder = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/v1/order`, config);
+    const { data } = await axios.get(
+      `https://rolex-server.vercel.app/api/v1/order`,
+      config
+    );
 
     dispatch({ type: USER_ORDER_SUCCESS, payload: data });
   } catch (error) {
@@ -152,7 +159,10 @@ export const getAllOrder = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/v1/order/admin`, config);
+    const { data } = await axios.get(
+      `https://rolex-server.vercel.app/api/v1/order/admin`,
+      config
+    );
 
     dispatch({ type: ADMIN_ORDER_SUCCESS, payload: data });
   } catch (error) {

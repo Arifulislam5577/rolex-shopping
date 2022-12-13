@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-lg navbar-light sticky-top ${
+        className={`navbar navbar-expand-lg py-4 navbar-light sticky-top ${
           navbarBg && "bg-light shadow-sm"
         }`}
       >

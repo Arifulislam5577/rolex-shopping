@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 import {
   addToCartAction,
   singleProductAction,
 } from "../../Redux/Actions/productActions";
-import Loader from "../Loader/Loader";
-import Zoom from "react-reveal/Zoom";
-import Fade from "react-reveal/Fade";
+import Loader from "../../components/Loader/Loader";
 const ProductDetials = () => {
   const dispatch = useDispatch();
   const { product, loading, error } = useSelector(

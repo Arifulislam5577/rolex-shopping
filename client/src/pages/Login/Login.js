@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Loader from "../Loader/Loader";
-import { useSelector, useDispatch } from "react-redux";
-import { userSignUpAction } from "../../Redux/Actions/userActions";
+import Loader from "../../components/Loader/Loader";
+import { userLoginActions } from "../../Redux/Actions/userActions";
 
-const SingIn = () => {
+const LogIn = () => {
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState(null);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const userSignUp = useSelector((state) => state.userSignup);
-  const { userInfo, loading, error } = userSignUp;
+  const { userInfo, loading, error } = useSelector((state) => state.userLogin);
 
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get("redirect");
@@ -22,15 +19,7 @@ const SingIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (username.length <= 4) {
-      setMessage("Username must be at least 5 characters");
-    } else if (password.length <= 5) {
-      setMessage("Password must be at least 6 characters");
-    } else {
-      dispatch(userSignUpAction(username, email, password));
-      setMessage("");
-    }
+    dispatch(userLoginActions(username, password));
   };
 
   useEffect(() => {
@@ -51,36 +40,22 @@ const SingIn = () => {
             {error && (
               <h2 className="p-3 bg-danger text-center text-light"> {error}</h2>
             )}
-            {message && (
-              <h2 className="p-3 bg-danger text-center text-light">
-                {message}
+            {Object.keys(userInfo ? userInfo : {}).length > 0 && (
+              <h2 className="p-3 bg-primary text-center text-light">
+                Login Successfull
               </h2>
             )}
-
             <div className="col-md-12">
-              <label htmlFor="inputEmail" className="form-label fs-5">
+              <label htmlFor="inputEmail4" className="form-label fs-5">
                 USERNAME
               </label>
               <input
                 type="text"
                 className="form-control p-3 rounded-0 fs-4"
-                id="inputEmail"
+                id="inputEmail4"
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div className="col-md-12">
-              <label htmlFor="inputEmail1" className="form-label fs-5">
-                EMAIL
-              </label>
-              <input
-                type="email"
-                className="form-control p-3 rounded-0 fs-4"
-                id="inputEmail1"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="col-md-12">
@@ -89,9 +64,9 @@ const SingIn = () => {
               </label>
               <input
                 type="password"
-                required
                 className="form-control p-3 rounded-0 fs-4"
                 id="inputPassword4"
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -99,13 +74,13 @@ const SingIn = () => {
             <div className="col-12">
               <button
                 type="submit"
-                className="btn btn-primary p-3 rounded-0 fs-5 px-5 w-100"
+                className="btn btn-primary p-3 rounded-0 fs-5 px-5"
               >
-                Sign in
+                Login
               </button>
               <p className="fs-5 my-3">
-                Have already an account?
-                <Link to={`/login?redirect=${redirect}`}>Login</Link>
+                Create a new account ?
+                <Link to={`/signin?redirect=${redirect}`}> SignUp</Link>
               </p>
             </div>
           </form>
@@ -115,4 +90,4 @@ const SingIn = () => {
   );
 };
 
-export default SingIn;
+export default LogIn;

@@ -184,7 +184,7 @@ export const products = [
     stock: 10,
     countReview: 100,
     color: "black",
-    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377237/Shopping-cart/BlackShock_pwxa12.jpg",
+    url: "https://res.cloudinary.com/arif5577/image/upload/v1643377237/Shopping-cart/featured2_drmpz7.png",
     base: "hot",
   },
   {

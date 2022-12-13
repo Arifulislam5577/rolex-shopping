@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "../../components/Loader/Loader";
+import { getUserOrder } from "../../Redux/Actions/orderActions";
 import {
   userDetailsActions,
   userUpdateActions,
 } from "../../Redux/Actions/userActions";
-import { getUserOrder } from "../../Redux/Actions/orderActions";
 
-import Loader from "../Loader/Loader";
 const Profile = () => {
   const userLogIn = useSelector((state) => state.userLogin);
   const { userInfo } = userLogIn;

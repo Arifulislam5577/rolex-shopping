@@ -27,13 +27,10 @@ const Payment = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const { data } = await axios.post(
-          "http://localhost:5000/api/v1/payment",
-          {
-            tokenId: Stripetoken.id,
-            amount: totalPrice,
-          }
-        );
+        await axios.post("https://rolex-server.vercel.app/api/v1/payment", {
+          tokenId: Stripetoken.id,
+          amount: totalPrice,
+        });
       } catch (error) {
         console.log(error);
       }

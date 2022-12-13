@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllOrder } from "../../Redux/Actions/orderActions";
-import Loader from "../Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 
 const Dashboard = () => {
   const dispatch = useDispatch();

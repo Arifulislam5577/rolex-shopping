@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   addToCartAction,
   allProductAction,
 } from "../../Redux/Actions/productActions";
-import Loader from "../Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 import Zoom from "react-reveal/Zoom";
 const Shop = () => {
   const dispatch = useDispatch();
   const { error, loading, products, totalProducts, result, resultPerPage } =
     useSelector((state) => state.allProduct);
   const { cartItems } = useSelector((state) => state.addToCartProducts);
-  const { color } = useParams();
+  const [color, setColor] = useState("");
+
   const [keyword, setKeyword] = useState("");
 
   const [pageNum, setPageNum] = useState(1);
@@ -26,7 +27,7 @@ const Shop = () => {
   }, [dispatch, keyword, pageNum, price, color]);
 
   return (
-    <section className="shop py-5 h-100">
+    <section className="shop py-5">
       <div className="container">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-4 col-lg-3 px-3 h-100">
@@ -92,14 +93,14 @@ const Shop = () => {
               <h3 className="text-uppercase">Colors</h3>
               <hr />
               <ul className="p-0 m-0">
-                {colors?.map((color, i) => (
-                  <li key={i} className="my-3">
-                    <Link
-                      to={`/shop/colors/${color}`}
-                      className="fs-4 text-uppercase text-dark"
+                {colors?.map((color) => (
+                  <li key={color} className="my-3">
+                    <button
+                      className="fs-4 text-uppercase text-dark border-0"
+                      onClick={() => setColor(color)}
                     >
                       {color}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>

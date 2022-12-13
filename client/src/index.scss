@@ -60,9 +60,13 @@ body::-webkit-scrollbar-thumb {
 svg {
   width: 2.4rem;
 }
-.hero {
-  height: 90vh;
+
+@media (min-width: 1140px) {
+  .hero {
+    height: 90vh;
+  }
 }
+
 .hero-text {
   h1 {
     font-size: 5rem;
@@ -105,7 +109,6 @@ svg {
   justify-content: space-between;
   grid-template-columns: 0.1fr 1fr 1fr;
   position: relative;
-  height: 100%;
 
   .hero-image {
     background-color: #ffb566;
@@ -135,9 +138,6 @@ svg {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    height: 100%;
-  }
   .content {
     grid-template-columns: 0.2fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -150,6 +150,11 @@ svg {
     .hero-image {
       grid-column: 2/-1;
       grid-row: 1/2;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
     }
     .hero-text {
       grid-column: 1/-1;
@@ -158,9 +163,15 @@ svg {
   }
 
   .hero-text {
+    text-align: center;
     h1,
     p {
       width: 100%;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
     }
   }
 }
@@ -325,12 +336,7 @@ svg {
   border-top: 5px solid #ffb566;
 }
 
-.checkout {
-  min-height: 50vh;
-}
 .orderDetails {
-  min-height: 60vh;
-
   .price {
     span {
       display: block;

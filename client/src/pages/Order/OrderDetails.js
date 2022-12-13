@@ -5,9 +5,9 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getOrder, OrderUpdate } from "../../Redux/Actions/orderActions";
-import Loader from "../Loader/Loader";
 import StripeCheckout from "react-stripe-checkout";
+import { getOrder, OrderUpdate } from "../../Redux/Actions/orderActions";
+import Loader from "../../components/Loader/Loader";
 
 const OrderDetails = () => {
   const navigate = useNavigate();
@@ -47,13 +47,10 @@ const OrderDetails = () => {
 
   const makeRequest = async () => {
     try {
-      const { data } = await axios.post(
-        "/api/v1/payment",
-        {
-          tokenId: Stripetoken.id,
-          amount: orderCalculation?.totalPrice,
-        }
-      );
+      const { data } = await axios.post("/api/v1/payment", {
+        tokenId: Stripetoken.id,
+        amount: orderCalculation?.totalPrice,
+      });
 
       data && updatePayment(data.id, data.status, data.billing_details.name);
     } catch (error) {
